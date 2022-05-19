@@ -17,3 +17,8 @@ resource "null_resource" "demo" {
     always_run = "${timestamp()}"
   }
 }
+
+output "output1" {
+  description = "output1"
+  value       = "sample output"
+}
