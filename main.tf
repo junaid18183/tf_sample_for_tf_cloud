@@ -5,8 +5,16 @@ terraform {
   required_providers {}
 }
 
-resource "local_file" "foo" {
-    content  = "foo!"
-    // filename = "${path.module}/foo.bar"
-    filename = "/tmp/foo.bar"
+// resource "local_file" "foo" {
+//     content  = "foo!"
+//     filename = "/tmp/foo.bar"
+// }
+
+resource "null_resource" "sample" {
+  provisioner "local-exec" {
+    command = "echo \"Hello world from $Name\""
+    environment = {
+      Name = "juned"
+    }
+  }
 }
