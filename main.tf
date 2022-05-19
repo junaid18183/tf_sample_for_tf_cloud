@@ -5,7 +5,7 @@ terraform {
   required_providers {}
 }
 
-resource "null_resource" "example" {
+resource "null_resource" "demo" {
   provisioner "local-exec" {
     command = "echo \"Hello world from $Name\""
     environment = {
