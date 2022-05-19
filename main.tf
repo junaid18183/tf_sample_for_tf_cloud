@@ -5,16 +5,15 @@ terraform {
   required_providers {}
 }
 
-// resource "local_file" "foo" {
-//     content  = "foo!"
-//     filename = "/tmp/foo.bar"
-// }
-
-resource "null_resource" "sample" {
+resource "null_resource" "ansible" {
   provisioner "local-exec" {
     command = "echo \"Hello world from $Name\""
     environment = {
       Name = "juned"
     }
+  }
+
+  triggers = {
+    always_run = "${timestamp()}"
   }
 }
