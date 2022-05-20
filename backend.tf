@@ -1,9 +1,10 @@
 terraform {
   backend "remote" {
+    hostname = "app.terraform.io"
     organization = "juvensys"
 
     workspaces {
-      name = "tf_cloud_poc"
+      prefix = "juned-"
     }
   }
 }

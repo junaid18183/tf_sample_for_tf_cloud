@@ -5,6 +5,16 @@ terraform {
   required_providers {}
 }
 
+# variable "organization" {
+#   description = "Terraform Cloud organization"
+#   type        = string
+# }
+
+# variable "workspaces" {
+#   description = "Terraform Cloud workspaces"
+#   type        = string
+# }
+
 resource "null_resource" "demo" {
   provisioner "local-exec" {
     command = "echo \"Hello world from $Name\""
